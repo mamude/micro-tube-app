@@ -2,7 +2,7 @@ import { Sidebar, SidebarCategories, SidebarCategory, SidebarCategorySpan } from
 
 const MainSidebar = () => {
   return (
-    <Sidebar>
+    <Sidebar className="sidebar">
       <SidebarCategories>
         <SidebarCategory>
           <i className="material-icons">home</i>

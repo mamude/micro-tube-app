@@ -13,20 +13,10 @@ export function MainHeader(props) {
     props.setLoading(true);
     axios.post(backendUrl + "/search", {
       query: query
-    }).then(function (response) {
+    }).then((response) => {
       props.setLoading(false);
       props.setResults(response.data.results);
     })
-  }
-
-  if (!query) {
-    setQuery("Brasil")
-    // axios.post(backendUrl + "/search", {
-    //   query: query
-    // }).then(function (response) {
-    //   props.setLoading(false);
-    //   props.setResults(response.data.results);
-    // })
   }
 
   return (
@@ -35,13 +25,13 @@ export function MainHeader(props) {
         <HeaderIcon className="material-icons">menu</HeaderIcon>
         <HeaderLogo src={logo} alt="Micro Tube" />
       </HeaderLeft>
-      <HeaderSearchForm onSubmit={handleSubmit}>
+      <HeaderSearchForm onSubmit={handleSubmit} className="header__search">
         <HeaderSearchInput name="query" value={query} placeholder="Search" onChange={e => setQuery(e.target.value)} />
         <HeaderSearchButton>
           <HeaderIcon className="material-icons">search</HeaderIcon>
         </HeaderSearchButton>
       </HeaderSearchForm>
-      <HeaderRight>
+      <HeaderRight className="header__icons">
         <HeaderIcon className="material-icons display-this">search</HeaderIcon>
         <HeaderIcon className="material-icons">videocam</HeaderIcon>
         <HeaderIcon className="material-icons">apps</HeaderIcon>
